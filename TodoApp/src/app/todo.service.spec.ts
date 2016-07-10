@@ -31,7 +31,7 @@ describe('Todo Service', () => {
     }));
   });
 
-  describe('#save(todo)', () =>{
+  describe('#save(todo)', () => {
     it('should automatically assign an incrementing id', inject([TodoService], (service: TodoService) => {
       let todo1 = new Todo({
         title: 'hello 1',
