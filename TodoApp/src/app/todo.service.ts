@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Todo } from './todo';
 
 @Injectable()
 export class TodoService {
@@ -16,12 +17,14 @@ export class TodoService {
     return this;
   }
 
-  deleteTodo(id: number): TodoService {
+  // delete /todos/:id
+  deleteTodoById(id: number): TodoService {
     this.todos = this.todos.filter(todo => todo.id !== id);
+    return this;
   }
 
   updateTodoById(id: number, values: Object = {}) {
-    let todo = this.getElementById(id);
+    let todo = this.getTodoById(id);
     if(!todo) {
       return null;
     }
