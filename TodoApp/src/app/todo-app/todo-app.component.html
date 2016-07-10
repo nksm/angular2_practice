@@ -5,11 +5,11 @@
   </header>
   <section class="main" *ngIf="todos.length > 0">
     <ul class="todo-list">
-      <li *ngFor="let todo of list" [class.completed]="todo.completed">
+      <li *ngFor="let todo of todos" [class.completed]="todo.completed">
           <div class="view">
             <input class="toggle" type="checkbox" (click)="toggleTodoCompleted(todo)" [checked]="todo.complated">
             <label>{{todo.title}}</label>
-            <button class="destroy" (click)="removeTodo(tod)"></button>
+            <button class="destroy" (click)="removeTodo(todo)"></button>
           </div>
       </li>
     </ul>
