@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Todo } from './../todo';
 import { TodoService } from './../todo.service';
 
@@ -9,7 +9,7 @@ import { TodoService } from './../todo.service';
   styleUrls: ['todo-app.component.css'],
   providers: [TodoService]
 })
-export class TodoAppComponent implements OnInit {
+export class TodoAppComponent {
 
   // We first instantiate a newTodo property and assign a new Todo() when the component class is instantiated.
   // This is the newTodo we added a two-way binding to in our view:
@@ -34,9 +34,6 @@ export class TodoAppComponent implements OnInit {
 
   get todos() {
     return this.todoService.getAllTodos();
-  }
-
-  ngOnInit() {
   }
 
 }
